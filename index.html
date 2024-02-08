@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Music Player App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="lightMode">
+  <!-- Change Theme Button -->
+  <div id="header">
+    <label class="switch">
+      <input type="checkbox" id="themeChange">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <!-- Heading -->
+  <div id="heading">
+    <h1>
+      Music Player
+    </h1>
+  </div>
+  <div>
+    <div id="musicBody">
+      <div id="musicBodyRow">
+        <!-- All Songs Section -->
+        <div id="musicBodyCol" class="h-100">
+          <div class="musicBodyBox" class="h-100">
+            <!-- Genere Selection Dropdown -->
+            <div>
+              Filter by Genre:
+              <select onchange="showSongs(this)">
+                <option value="">All</option>
+                <option value="Sad Song">Sad Song</option>
+                <option value="Romantic Song">Romantic Song</option>
+                <option value="Party Song">Party Song</option>
+                <option value="Devotional Song">Devotional Song</option>
+              </select>
+            </div>
+            <br />
+            <!-- Search Song -->
+            <div>
+              Search Song
+              <input type="text" id="searchSong" placeholder="Enter Song Name" onChange="searchSongList()">
+              <div id="searchSongList">
+              </div>
+            </div>
+            <div>
+              <h2>
+                All Songs
+              </h2>
+            </div>
+            <!-- List of All Songs -->
+            <div id="allSongList">
+            </div>
+          </div>
+        </div>
+        <!-- Song Card Section -->
+        <div id="musicBodyCol">
+          <div class="musicBodyBox">
+            <!-- Current Song Being Played -->
+            <div class="musicBodyImageBox">
+              <div id="musicBodyImageBox2">
+              </div>
+              <h1 id="currentSongName">
+                Chingari Koi
+              </h1>
+              <p id="currentSongArtist">
+                Kishore Kumar
+              </p>
+            </div>
+            <div>
+              <audio controls class="w-100" id="currentSong">
+                <source src="/public/song/amar_prem/chingari_koi.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <!-- Control Song Functionalities -->
+            <div class="buttonMusicRow">
+              <button id="prevButton" class="buttonMusic point-text" onclick="playPrev()">
+                Prev
+              </button>
+              <button id="nextButton" class="buttonMusic point-text" onclick="playNext()">
+                Next
+              </button>
+            </div>
+            <div class="buttonMusicRow">
+              <button id="addToPlaylist" class="buttonMusic point-text" onclick="addToPlaylist()">
+                Add to Playlist
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Playlist Section -->
+        <div id="musicBodyCol">
+          <!-- Create Playlist -->
+          <div id="musicBodyBox1">
+            <input type="text" id="playlistName">
+            <button id="createPlaylist" class="point-text" onclick="createPlaylist()">Create Playlist</button>
+          </div>
+          <div class="musicBodyBox">
+            <!-- Search Playlist -->
+            <div>
+              Search Playlist
+              <input type="text" id="searchPlaylistValue" placeholder="Enter Playlist Name" onChange="searchPlayList()">
+              <div id="searchPlayList">
+              </div>
+            </div>
+            <!-- Current Playlist -->
+            <div>
+              <h2>
+                Current Playlist
+              </h2>
+            </div>
+            <!-- List of Songs in Current Playlist -->
+            <div id="currentPlaylist">
+            </div>
+            <!-- All Playlists -->
+            <div>
+              <h2>
+                All Playlist
+              </h2>
+            </div>
+            <!-- List of All Playlists -->
+            <div id="allPlaylist">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
